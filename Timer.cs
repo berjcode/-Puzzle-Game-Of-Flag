@@ -47,6 +47,12 @@ public class Timer : MonoBehaviour
         _currentTime += 10;
     }
    
+    public void finishTime()
+    {
+       
+        _currentTime = 3;
+        
+    }
     void pause()
     {
         pauseMenuUI.SetActive(true);
