@@ -12,9 +12,12 @@ public class Timer : MonoBehaviour
 
     private float _currentTime;
     public GameObject pauseMenuUI;
-
+    public Button ExtraTimeButton;
+    private float ExtraTimeCounter;
+  
     private void Start()
     {
+       
         _currentTime = _duration;
 
         _timerText.text = _currentTime.ToString();
@@ -37,21 +40,40 @@ public class Timer : MonoBehaviour
                 pause();
             }
 
+            
         }
+
+        
         yield return null;
+       
     }
 
+    public void Update()
+    {
+        controlTime();
+    }
 
+    public void controlTime()
+    {
+        if(ExtraTimeCounter == 1)
+        {
+            ExtraTimeButton.interactable = false;
+
+        }
+    }
     public void extraTime()
     {
+        ExtraTimeCounter++;
         _currentTime += 10;
+
+        
     }
    
     public void finishTime()
     {
-       
-        _currentTime = 3;
-        
+
+        pauseMenuUI.SetActive(true);
+
     }
     void pause()
     {

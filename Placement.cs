@@ -1,18 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Placement : MonoBehaviour
 {
     Camera sideCamera;
     Vector2 firsPosition;
     GameObject[] boxArray;
+   
+    public Button jokerButton;
 
     //Level Control 
 
    Finish Finish;
 
 
+    public void xyz()
+    {
+       foreach (GameObject box in boxArray)
+        {
+           
+            if (box.name == gameObject.name)
+            {
+               
+                transform.position = box.transform.position;
+              
+            }
+           
+        }
+       
+    }
+   
     private void OnMouseDrag()
     {
         Vector3 pozisyon = sideCamera.ScreenToWorldPoint(Input.mousePosition);

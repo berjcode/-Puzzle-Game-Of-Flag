@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ButtonController : MonoBehaviour
 {
+   
 
+ 
+    
+    public GameObject settingPanel;
     //info
 
-    public GameObject square;
-    public GameObject passSquare;
+    
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -42,6 +45,7 @@ public class ButtonController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    /*
     public void whenButtonClicked()
     {
         if (square.activeInHierarchy == true)
@@ -49,6 +53,8 @@ public class ButtonController : MonoBehaviour
         else
             square.SetActive(true);
     }
+    */
+    /*
     public void whenButtonClicked2()
     {
         if (passSquare.activeInHierarchy == true)
@@ -56,12 +62,22 @@ public class ButtonController : MonoBehaviour
         else
             passSquare.SetActive(true);
     }
-
+    */
     public void NextGerman()
     {
         SceneManager.LoadScene (3);
     }
 
+    public void settingsPanel()
+    {
+        settingPanel.SetActive(true);
+    }
+
+    public void settingsPanelOff()
+    {
+        settingPanel.SetActive(false);
+    }
 
 
+    
 }
